@@ -6,7 +6,7 @@ const AppToolbar = ({ location, toolbar }) => {
         <div className="md-grid">
             <Toolbar
                 id="app-toolbar"
-                title="Stock Market"
+                title="iStock-Chart"
                 style={{backgroundColor: '#e6e6e6', color: 'black', fontSize: 35}}
                 fixed
                 colored />
