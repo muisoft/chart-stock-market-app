@@ -3,7 +3,7 @@ import * as ActionType from '../actions/ActionType';
 const initialState = {
     stocks: [],
     stock: {},
-    iserror: false,
+    isloading: true,
     partialState: {},
     message: {},
     value: ''
@@ -14,9 +14,15 @@ export const stock = (state = initialState, action) => {
         case ActionType.ON_SUCCESS:
             return {
                 ...state,
-                stocks: action.payload,
+                isloading: false,
+                stocks: action.payload  
             }
-       
+        case ActionType.ON_LOADING:
+            return {
+                ...state,
+                isloading: action.payload,
+            }
+
         default:
             return state;
     }

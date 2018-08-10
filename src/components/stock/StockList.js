@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Card, CardTitle, TextField, Button, FontIcon } from 'react-md';
 
 import { withMainComponent } from '../hoc';
 
@@ -9,19 +7,6 @@ import NewStock from './NewStock';
 import Stock from './Stock';
 
 class StockList extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            stocks: []//this.props.stocks,
-        }
-        
-    }
-   
-    
-    removeStock(stock) {
-        this.setState({ stocks: this.state.stocks.filter(d => d.code !== stock.code) });
-    }
 
     render() {
         let { stocks, deleteStock } = this.props;

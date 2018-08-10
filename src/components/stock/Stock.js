@@ -21,7 +21,6 @@ const Stock = ({ description, symbol, deleteStock }) => {
 Stock.PropTypes = {
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-
     deleteStock: PropTypes.func.isRequired
 }
 

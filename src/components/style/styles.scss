@@ -9,73 +9,13 @@ body {
 @import '../../globals';
 
 html {
-    
-   
     font-size: 14px;
     
    // padding-left: 70px;
 }
 @include react-md-everything;
 
-/**.highcharts-background {
-  fill:#eee;//#625151;
-}
-g .highcharts-button-box {
-  background-color: red;
-  fill: #444444;
-  color: #fff;
-}
-**/
 
-.login-wrapper {
-  position: absolute;
-  top: -360px;
-  left: 25%;
-  height: 300px;  
-}
-
-.message {
-  text-align: center;
-}
-
-.option-signin { 
-   font-size: 16px;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-}
-
-
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-}
-.login-form { 
-  display: flex; 
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;
-  padding-top: 5px; 
-  padding-left: 5px;
-    .line-divider {
-      width: 260px;
-      display: flex;
-      flex-direction: row;
-      align-items: center; 
-      justify-content: center; 
-      padding: 10px;
-    }
-    .line-divider span {
-      padding: 5px;
-      color: darkgreen;
-    }
-}
-.signin {
-  @extend .login-form;
-  padding-bottom: 0px;
-}
 .actions {
     display: flex;
     flex-direction: row;
@@ -125,17 +65,7 @@ g .highcharts-button-box {
     justify-content: center;
   }
 }
-.social-button {
-  color: #fff;
-}
-.social-icon { 
-  margin-right: 5px; 
-  color: #fff 
-}
-.github-button {
-  @extend .social-button;
-  background-color: #444444;
-}
+
 
 @media (min-width: 360px) and (max-width: 640px){
     .small-device {

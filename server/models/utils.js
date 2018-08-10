@@ -14,31 +14,20 @@ module.exports = {
         });
     },
     saveStock(stockcode, done) {
-       /** isStockCodeExist(stockcode, (exist) => {
-            if (exist) {
-                let stock = new Stock({ code: stockcode })
-                stock.save((err, stock) => {
-                    console.log('Saved');
-                    if (err) console.error(err);
-                    return done(stock);
-                });
-            }
-        })**/
-        //fetchStock(stockcode, (err, stock) => {
-           // if (err) console.error(err);
-           // if (stock) {
-                let stock = new Stock({ code: stockcode })
+        const code = stockcode.toUppercase();
+        fetchStock(code, (err, stock) => {
+           if (err) console.error(err);
+           if (stock) {
+                let stock = new Stock({ code: code })
                 stock.save((err, saved) => {
-                    console.log('Saved');
                     if (err) console.error(err);
                     return done(saved);
                 });
-           // }
-        //})
+            }
+        })
     },
     deleteStock(stockcode, done) {
         Stock.findOneAndRemove({ code: stockcode }, (stock) => {
-            console.log('Deleted');
             return done(stock);
         });
     }
@@ -59,23 +48,3 @@ const isStockCodeExist = (stockCode, done) => {
         .then(res => done(isContained(res.data)))
         .catch(err => console.error(err));
 }
-
-
-
-/**const fetchStock1 = (stockCode, done) => {
-    const date = new Date();
-    const [year, month, day] = [+date.getFullYear(), 1 + +date.getMonth(), +date.getDate()];
-    const start_date = `${year - 1}-${month}-${day}`;
-    const end_date = `${year}-${month}-${day}`;
-    const stockCode1 = 'GOOG';
-    const KEY = '6qp4dRJBcBccYjBMyeCn';
-    const url = `https://www.quandl.com/api/v3/datasets/WIKI/${stockCode}.json?start_date=${start_date}&order=asc&column_index=4&transformation=rdiff&api_key=${KEY}`
-    axios.get(url)
-        .then(res => {
-            return done(null, res.data);
-        })
-        .catch(err => {
-            return done(err);
-        });
-}**/
-

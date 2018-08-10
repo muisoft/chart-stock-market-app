@@ -84,17 +84,15 @@ const config = (series) => {
 class Chart extends Component {
     constructor(props) {
         super(props);
-        //this.props.initial();
         this.props.getUpdate();
     }
  
     componentDidMount() {
-        this.props.initial();
+        this.props.renderAllStocks();
     }
     
     componentWillUpdate() {
-        this.props.initial();
-        //this.props.renderAllStocks();
+        this.props.renderAllStocks();
     }
     
     componentWillUnmount() {
@@ -102,7 +100,15 @@ class Chart extends Component {
     }
     render() {
         let { series } = this.props;
-        
+        if (series.length == 0) {
+            return (
+                <Card className="chart-card" style={{backgroundColor: '#eee'}}>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: 80}}>
+                      <img src="/img/loading.gif" />
+                    </div>
+                </Card>
+            );
+        }
         return (
             <Card className="chart-card">
                 <ReactHighstock config={config(series)} />

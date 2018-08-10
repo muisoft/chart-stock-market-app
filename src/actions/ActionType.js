@@ -1,3 +1,3 @@
 export const ON_SUCCESS = 'ON_SUCCESS';
-export const ON_UPDATE = 'ON_UPDATE';
+export const ON_LOADING = 'ON_LOADING';
 

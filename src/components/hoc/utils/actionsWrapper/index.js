@@ -5,15 +5,12 @@ export const actionsWrapper = (props) => {
     const url = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:3000';
     const socket = io.connect(url);
     return {
-        initialData: () => {
-            props.initial();
-        },
         renderAllStocks: () => {
-            props.getAllStocks(socket);
+            props.getAllStocks();
         }, 
         getUpdate: () => {
             socket.on('update', (update) => {
-                props.initial();
+                props.getAllStocks();
             })
         },
         disconnect: () => {
@@ -23,7 +20,6 @@ export const actionsWrapper = (props) => {
             // We send save new stock request through redux middleware to server
             props.addNewStock(socket, props.partialState.stockcode);
             alert('Successfuly added');
-            //props.getAllStocks(socket); 
         },
         handleChange: (e, m) => {
             const target = m.target;
@@ -35,7 +31,6 @@ export const actionsWrapper = (props) => {
         deleteStock: (code) => {
             props.removeStock(socket, code);
             alert('Successfuly deleted');
-            //props.getAllStocks(socket);
         }
     }
 }

@@ -8,9 +8,9 @@ export const isSuccess = (payload) => {
         payload
     }
 }
-export const isUpdate = (payload) => {
+export const isLoading = (payload) => {
     return {
-        type: ActionType.ON_UPDATE,
+        type: ActionType.ON_LOADING,
         payload
     }
 }
@@ -22,20 +22,12 @@ export const addNewStock = (socket, stockcode) => {
     }
 }
 export const deleteStock = (socket, stockcode) => {
-    console.log('deleteStock: ' + JSON.stringify(stockcode));
     return (dispatch) => {
         socket.emit('deleteStock', stockcode);
     }
 }
-export const getStocks = (socket) => {
-    socket.emit('allstocks', 'stocks');
-    return (dispatch) => {
-        socket.on('getStocks', res => {
-            dispatch(isSuccess(formatStock(res)));
-        });
-    }
-}
-export const initial = () => {
+
+export const getStocks = () => {
     return (dispatch) => {
         fetch('/stocks',
             {
@@ -48,7 +40,7 @@ export const initial = () => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
-                //  dispatch(isLoading(false));
+                dispatch(isLoading(false));
                 return response;
             })
             .then((response) => response.json())

@@ -2,8 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk  from 'redux-thunk';
 import reducers from './reducers';
 
-
-//export const history = createHistory();
 const enhancers = []
 
 if( process.env.NODE_ENV === 'development') {

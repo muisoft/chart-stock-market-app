@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Toolbar, Button } from 'react-md';
-import io from 'socket.io-client';
 import { withMainComponent } from './hoc';
 import { Chart, StockList } from './stock';
 import { AppToolbar } from './toolbar';
@@ -11,8 +8,7 @@ import { AppToolbar } from './toolbar';
 class App extends Component {
   
     render() {
-        let { stocks } = this.props;
-        console.log('Yewo: ' + JSON.stringify(stocks)); 
+        let { stocks, isloading } = this.props;
         const series = stocks !== undefined ? stocks.map(stock => {
                 return { name: stock.symbol, data: stock.chart }
         }) : []; 

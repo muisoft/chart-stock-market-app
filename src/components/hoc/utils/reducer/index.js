@@ -1,22 +1,18 @@
 
-import { getStocks, deleteStock, addNewStock, initial } from '../../../../actions';
+import { getStocks, deleteStock, addNewStock } from '../../../../actions';
 
 export const mapStateToProps = ({ stock }) => {
     return {
         stocks: stock.stocks,
         partialState: stock.partialState,
-        status: stock.message,
-        value: stock.value
+        isloading: stock.isloading, 
     }
 }
 
 export const mapDispatchToProps = (dispatch) => {
     return {
-        initial: () => {
-            dispatch(initial())
-        },
-        getAllStocks: (socket) => {
-            dispatch(getStocks(socket))
+        getAllStocks: () => {
+            dispatch(getStocks())
         },
         removeStock: (socket, data) => {
             dispatch(deleteStock(socket, data))
