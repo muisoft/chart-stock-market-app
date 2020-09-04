@@ -34,7 +34,8 @@ module.exports = {
 }
 
 const fetchStock = (stockCode, done) => {
-    const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${stockCode}&types=company,chart&range=1y`
+   // const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${stockCode}&types=company,chart&range=1y`;
+     const url = 'https://api.iextrading.com/1.0/ref-data/symbols';
     axios.get(url)
         .then(res => {
             return done(null, res.data);
