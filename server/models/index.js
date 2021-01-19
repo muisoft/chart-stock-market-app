@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = (url) => {
-  mongoose.connect(url, { useNewUrlParser: true});
+  mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true});
   mongoose.Promise = global.Promise;
 
   mongoose.connection.on('error', err => {

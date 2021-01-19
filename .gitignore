@@ -9,6 +9,7 @@
 # production
 /build
 .env
+data.json
 # misc
 .DS_Store
 .env.local

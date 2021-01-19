@@ -12,15 +12,15 @@ const Stock = ({ description, symbol, deleteStock }) => {
                 <Button onClick={() => deleteStock(symbol)} className="md-cell--right" icon tooltipLabel="Delete Stock">close</Button>
             </CardTitle>
             <CardText>
-                <p>{description}</p>
+                <p>{parseInt(description) === 0 ? "No Description" : description}</p>
             </CardText>
         </Card>
     )
 }
 
 Stock.PropTypes = {
-    code: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    symbol: PropTypes.string.isRequired,
     deleteStock: PropTypes.func.isRequired
 }
 

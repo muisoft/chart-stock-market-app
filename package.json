@@ -6,11 +6,13 @@
   "dependencies": {
     "axios": "^0.9.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "dotenv": "^6.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "iex-api": "^0.0.3",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
     "node-fetch": "^1.7.3",
@@ -37,6 +39,7 @@
     "watch-css": "npm run build-css && npm run build-css -- --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
+    "start-server": "nodemon ./server.js localhost 5000",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

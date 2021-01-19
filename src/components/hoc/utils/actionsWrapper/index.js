@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 
 //Here we wrap all our actions we wanted to perform on this App
 export const actionsWrapper = (props) => {
-    const url = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:3000';
+    const url = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:5000/';
     const socket = io.connect(url);
     return {
         renderAllStocks: () => {

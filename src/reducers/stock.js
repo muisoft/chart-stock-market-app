@@ -10,6 +10,7 @@ const initialState = {
 }
 
 export const stock = (state = initialState, action) => {
+    
     switch (action.type) {
         case ActionType.ON_SUCCESS:
             return {

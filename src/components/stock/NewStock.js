@@ -29,7 +29,7 @@ const NewStock = ({saveNewStock, handleChange, partialState, value}) => {
     }
     return (
         <Card className="card" raise>
-            <CardTitle>
+            <CardTitle title="">
                 <h3>Syncs in realtime across clients</h3>
             </CardTitle>
             <div style={{ width: '100%', height: 30, display: 'inline-flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', paddingLeft: 15, paddingRight: 15 }}>

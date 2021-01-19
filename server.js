@@ -4,6 +4,8 @@ const socketIO = require('socket.io');
 const express = require('express');
 const compression = require('compression');
 const path = require('path');
+
+const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
@@ -23,8 +25,11 @@ const dev = app.get('env') !== 'production';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(cors());
+
 
 app.get('/stocks', (req, res) => {
+    console.log("Yes");
     allStocks(stocks => res.json(stocks));
 });
 
@@ -56,6 +61,6 @@ if (dev) {
 }
 server.listen(PORT, err => {
     if (err) throw err;
-    console.log('Server started');
+    console.log('Server started on port: '+ PORT);
 })
 

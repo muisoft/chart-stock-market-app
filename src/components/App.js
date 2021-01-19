@@ -12,6 +12,7 @@ class App extends Component {
         const series = stocks !== undefined ? stocks.map(stock => {
                 return { name: stock.symbol, data: stock.chart }
         }) : []; 
+        
         return (
             <div style={{ height: 480, marginTop: 60 }}>
                 <AppToolbar />

@@ -45,6 +45,7 @@ export const getStocks = () => {
             })
             .then((response) => response.json())
             .then((response) => {
+               
                 dispatch(isSuccess(formatStock(response)));
             })
             .catch((err) => console.error(err));
@@ -61,5 +62,6 @@ const formatStock = (data) => {
             chart: chart(stock.chart)
         }
     })
+   
     return formatedStocks;
 }
