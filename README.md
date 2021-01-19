@@ -7,3 +7,5 @@ User Stories:
 >4.  I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
 
 You can view the live demo here: https://istock-chart.herokuapp.com
+
+![Screeshot](https://github.com/muisoft/chart-stock-market-app/blob/master/istock-chart.herokuapp.com_.png)
