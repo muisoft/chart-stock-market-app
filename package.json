@@ -15,7 +15,7 @@
     "iex-api": "^0.0.3",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^2.6.7",
     "nodemon": "^1.18.3",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
